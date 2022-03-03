@@ -1,2 +1,13 @@
 steps:
-- name: 'gcr.io/mj-sandbox-342416/mj-sample@sha256:17a2b7d140ee602bea26b0d7ee3ce28edc4946477e209702447b8c861aee90af'
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/mj-sandbox-342416/quick123', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/mj-sandbox-342416/quick123']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'mjabc2', '--image', 'gcr.io/mj-sandbox-342416/quick123', '--region', 'us-central1','--allow-unauthenticated']
+images:
+- gcr.io/mj-sandbox-342416/quick123

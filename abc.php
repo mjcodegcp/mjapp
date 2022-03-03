@@ -1,5 +1,6 @@
 <?php
 	echo 'in abc file';
-	echo '<a href="inex.php">Home</a>'
+	echo '<a href="index.php">Home</a>'
+	echo '<a href="index.php">ABC</a>'
 ?>
 
