@@ -1,0 +1,2 @@
+steps:
+- name: 'gcr.io/mj-sandbox-342416/mj-sample@sha256:17a2b7d140ee602bea26b0d7ee3ce28edc4946477e209702447b8c861aee90af'
